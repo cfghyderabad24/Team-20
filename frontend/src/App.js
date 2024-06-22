@@ -6,6 +6,7 @@ import Register_farmer from './components/Register_farmer';
 import Login_admin from './components/Login_admin';
 import Register_admin from './components/Register_admin';
 import AboutUs from './components/aboutus';
+import Home from './components/home';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
       <Navbar />
       <Routes>
+        <Route path='/' element={<Home />} />
           <Route path="/login_farmer" element={<Login_farmer />} />
           <Route path="/register_farmer" element={<Register_farmer/>} />
           <Route path="/login_admin" element={<Login_admin />} />

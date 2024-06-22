@@ -4,7 +4,7 @@ const ImageWithText = () => {
   return (
     <div className="image-with-text-container">
       <img 
-        src="https://images.pexels.com/photos/1306791/pexels-photo-1306791.jpeg?auto=compress&cs=tinysrgb&w=600" // Replace with your image URL
+        src="http://wallpapercave.com/wp/wp1886357.jpg" // Replace with your image URL
         alt="event image"
         className="image"
       />
@@ -12,7 +12,10 @@ const ImageWithText = () => {
         <h2 className="heading">OUR MISSION</h2>
         <p className="heading-underline">____</p>
         <p className="description">
-        Our mission is to create unforgettable experiences through meticulous planning and execution that reflects the unique personalities of our clients. We exceed expectations, bringing joy and lasting memories to every celebration. Staying at the forefront of event design, we embrace innovation and explore cutting-edge concepts to deliver fresh experiences. Our dedication includes personalized service excellence, tailoring each detail to our clients' unique vision. With a blend of creativity, modern aesthetics, and a commitment to sustainability, we aim to surpass expectations and make each event an exceptional and cherished affair.
+          
+IFTR aims to help maintain the society self-sustainably by carrying out programmes of social/rural importance for providing livelihood, income generation, and upliftment of poor through various means. IFTR will strive to restore the dignity and quality of life of masses by eliminating barriers to success through research, innovation, education, entrepreneurial development, design, develop and disseminate simple interventions. IFTR firmly believes in bridging the indigenous and traditional knowledge, wisdom and practices and using scientific advancement to bring a transition in human life for sustainable happiness by conservation and effective use of resources. IFTR is open for collaboration with like-minded organizations / Institutions / Commercial organizations and prepared to take up research and implementation programmes/projects that suit to its expertise to make this world happier. Let us all make our world a better place for all to have a sustainable life.
+{/*         
+Design, Develop and Disseminate Technologies for the Masses for Sustainable happiness. */}
         </p>
       </div>
     </div>

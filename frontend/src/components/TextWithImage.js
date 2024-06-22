@@ -5,14 +5,15 @@ const TextWithImage = () => {
   return (
     <div className="new-text-with-image-container">
       <div className="new-text-container">
-        <h2 className="new-heading">THE PLANNING PARADISE</h2>
+        <h2 className="new-heading"></h2>
         <p className="header-underline">____</p>
         <p className="new-description">
-        Planning Paradise is passionate about crafting charmingly timeless and elegant luxurious weddings and events at stunning venues throughout the world. As the leading wedding designers and event organizers in Hyderabad and Bangalore, we are renowned to create authentic experiences worth cherishing for a lifetime. Choosing Planning Paradise for wedding planning services ensures you and your loved ones can focus on enjoying your time together instead of worrying about the nuisances related to wedding planning. At Planning Paradise, we have highly specialized wedding planners to create a customized timeline for your wedding day while outlining exactly how everything will be managed from start to finish.
+        
+IFTR aims to help maintain the society self-sustainably by carrying out programmes of social/rural importance for providing livelihood, income generation, and upliftment of poor through various means. IFTR will strive to restore the dignity and quality of life of masses by eliminating barriers to success through research, innovation, education, entrepreneurial development, design, develop and disseminate simple interventions. IFTR firmly believes in bridging the indigenous and traditional knowledge, wisdom and practices and using scientific advancement to bring a transition in human life for sustainable happiness by conservation and effective use of resources. IFTR is open for collaboration with like-minded organizations / Institutions / Commercial organizations and prepared to take up research and implementation programmes/projects that suit to its expertise to make this world happier. Let us all make our world a better place for all to have a sustainable life.
         </p>
       </div>
       <img
-        src="https://images.squarespace-cdn.com/content/v1/60df244e7cdd8439545be644/fd4dd92f-5d4e-4bb5-85a3-10949c033fdb/TPP+FINAL-01.png" // Replace with your image URL
+        src="https://www.lightcastlebd.com/wp-content/uploads/2020/05/Farming_S.jpg" // Replace with your image URL
         alt="Your Alt Text"
         className="new-image"
       />

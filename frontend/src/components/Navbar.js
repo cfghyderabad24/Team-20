@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-brand">
-      <img src="https://images-platform.99static.com/a3N_EX1bu4ZYoZuNon2wOpuF9hw=/413x0:2894x2481/fit-in/500x500/projects-files/109/10974/1097485/6d2b78b0-8b08-4741-8a4c-33f11210aaab.png" alt="Logo" className="logo-image" />
+      <img src="http://www.iftr.in/assests/img/iftrlogo.png" alt="Logo" className="logo-image" />
       <span className="logo-text">IFTR</span>
       </Link>
       <ul className="navbar-nav">

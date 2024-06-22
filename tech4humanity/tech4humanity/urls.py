@@ -27,5 +27,5 @@ urlpatterns = [
 
 
     path("",include("adminapp.urls")),
-    #path("",include("farmerapp.urls")),
+    path("",include("farmerapp.urls")),
 ]

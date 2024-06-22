@@ -1,0 +1,175 @@
+<!-- templates/farmer_form.html -->
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Information Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .app-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="date"],
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-group input[type="radio"] {
+            margin-right: 10px;
+        }
+        .form-group input[type="radio"] + label {
+            margin-right: 20px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h1>Farmer Information Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Farmer's Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" id="gender-male" name="gender" value="Male" required>
+                <label for="gender-male">Male</label>
+                <input type="radio" id="gender-female" name="gender" value="Female" required>
+                <label for="gender-female">Female</label>
+            </div>
+            <div class="form-group">
+                <label for="aadhar_number">Aadhar Number:</label>
+                <input type="text" id="aadhar_number" name="aadhar_number" required>
+            </div>
+            <div class="form-group">
+                <label for="contact_number">Contact Number:</label>
+                <input type="text" id="contact_number" name="contact_number" required>
+            </div>
+            <div class="form-group">
+                <label for="area_ploughed">Area Ploughed (in acres):</label>
+                <input type="number" id="area_ploughed" name="area_ploughed" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="season">Season:</label>
+                <select id="season" name="season" required>
+                    <option value="">Select Season</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Monsoon">Monsoon</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="crops_grown">Crops Grown:</label>
+                <input type="text" id="crops_grown" name="crops_grown" required>
+            </div>
+            <div class="form-group">
+                <label>Seeds Used:</label>
+                <input type="radio" id="seeds_own" name="seeds_used" value="Own" required>
+                <label for="seeds_own">Own</label>
+                <input type="radio" id="seeds_iftr" name="seeds_used" value="Given by IFTR" required>
+                <label for="seeds_iftr">Given by IFTR</label>
+            </div>
+            <div class="form-group">
+                <label for="date_of_seed_sown">Date of Seed Sown:</label>
+                <input type="date" id="date_of_seed_sown" name="date_of_seed_sown" required>
+            </div>
+            <div class="form-group">
+                <label>Transplanting:</label>
+                <input type="radio" id="transplanting_manual" name="transplanting" value="Manual" required>
+                <label for="transplanting_manual">Manual</label>
+                <input type="radio" id="transplanting_machine" name="transplanting" value="Machine" required>
+                <label for="transplanting_machine">Machine</label>
+            </div>
+            <div class="form-group">
+                <label for="irrigation_method">Irrigation Method:</label>
+                <select id="irrigation_method" name="irrigation_method" required>
+                    <option value="">Select Irrigation Method</option>
+                    <option value="Borewell">Borewell</option>
+                    <option value="Well">Well</option>
+                    <option value="River">River</option>
+                    <option value="Drip Irrigation">Drip Irrigation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fertilisers Used:</label>
+                <input type="radio" id="fertilisers_organic" name="fertilisers_used" value="Organic" required>
+                <label for="fertilisers_organic">Organic</label>
+                <input type="radio" id="fertilisers_chemical" name="fertilisers_used" value="Chemical" required>
+                <label for="fertilisers_chemical">Chemical</label>
+                <input type="radio" id="fertilisers_bio" name="fertilisers_used" value="Bio-inputs" required>
+                <label for="fertilisers_bio">Bio-inputs</label>
+            </div>
+            <div class="form-group">
+                <label for="date_of_harvesting">Date of Harvesting:</label>
+                <input type="date" id="date_of_harvesting" name="date_of_harvesting" required>
+            </div>
+            <div class="form-group">
+                <label for="yield">Yield (in kg):</label>
+                <input type="number" id="yield" name="yield" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Financial Need:</label>
+                <input type="radio" id="financial_need_yes" name="financial_need" value="Yes" required>
+                <label for="financial_need_yes">Yes</label>
+                <input type="radio" id="financial_need_no" name="financial_need" value="No" required>
+                <label for="financial_need_no">No</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SMS PROJECT</title>
+    <title>JPMC</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -11,13 +11,13 @@
 
 <h2 align="center">JPMC</h2><br>
 
-<a href="{% url 'adminhome' %}">Home</a>&nbsp;&nbsp;
-<a href="{% url 'adminlogout' %}">Logout</a>
+<a href="{% url 'farmerhome' %}">Home</a>&nbsp;&nbsp;
+<a href="{% url 'farmerlogout' %}">Logout</a>
 
-<h3 align="left" style="color:green">Welcome {{adminuname}}</h3>
+<h3 align="left" style="color:green">Welcome {{farmeruname}}</h3>
 
 {% block body %}
-<p>I am in AdminHome Page</p>
+<p>I am in FarmerHome Page</p>
 {% endblock %}
 
 </body>

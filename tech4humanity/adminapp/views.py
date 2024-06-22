@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Admin
+from .models import Admin,Farmer
 
 
 def login(request):
@@ -36,23 +36,32 @@ def checkadminlogin(request):
         msg="Login Failed"
         return render(request,"login.html",{"message":msg})
 
-@login_required
-def adminchangepwd(request):
-    auname = request.session["auname"]
-    return render(request,"adminchangepwd.html",{"adminuname":auname})
+def farmerlogin(request):
+    if request.method == "POST":
+        return checkfarmerlogin(request)
+    return render(request, "farmerlogin.html")
 
+# Create your views here.
 @login_required
-def adminupdatepwd(request):
-    auname = request.session["auname"]
-    opwd=request.POST["opwd"]
-    npwd=request.POST["npwd"]
-    flag=Admin.objects.filter(Q(username=auname)&Q(password=opwd))
+def farmerhome(request):
+    funame = request.session["funame"]
+    return render(request,"farmerhome.html",{"farmeruname":funame})
+def farmerlogout(request):
+    request.session.flush()  # This will clear all session data
+    return redirect('farmerlogin')  # Redirect to the login page after logging out
+
+
+def checkfarmerlogin(request):
+    farmeruname=request.POST["uname"] #uname given in html page
+    farmerpwd=request.POST["pwd"]
+
+    flag=Farmer.objects.filter(Q(username=farmeruname)&Q(password=farmerpwd)) # Q Query, comparing the models username and the data from the adminlogin post (adminuname)
+    print(flag)
+
     if flag:
-        print("Old Pwd is Correct")
-        Admin.objects.filter(username=auname).update(password=npwd)
-        msg="Password Updated Successfully"
+        request.session["funame"]=farmeruname #for creating session for adminuname
+        return render(request,"farmerhome.html",{"farmeruname":farmeruname})
     else:
-        print("Old Password is Incorrect")
-        msg="Old Password is Incorrect"
-    return render(request,"adminchangepwd.html",{"adminuname":auname,"message":msg})
-
+        #return HttpResponse("Login Failed")
+        msg="Login Failed"
+        return render(request,"farmerlogin.html",{"message":msg})

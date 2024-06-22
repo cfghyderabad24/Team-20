@@ -1,21 +1,41 @@
-import React from 'react'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import './login.css';
 
-const Login_admin = () => {
+const Login_admin= () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    role: "",
+  });
   return (
-    <div>
-        <form>
-  <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-  </div>
-  <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"/>
-  </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
-</form>
+    <div className="login-container">
+      <h2 className="login-title">Login Page</h2>
+      <form>
+        <div>
+          <label className="login-label">Email:</label>
+          <input
+            type="email"
+            name="email"
+            className="login-input"
+          />
+        </div>
+        <div>
+          <label className="login-label">Password:</label>
+          <input
+            type="password"
+            name="password"
+            className="login-input"
+          />
+        </div>
+        <div>
+          <button type="submit" className="login-button">Login</button>
+        </div>
+        <p className="login-label">
+          Don't have an account? <Link to="/register_admin"><span className="link-label">Register here</span></Link>
+        </p>
+      </form>
     </div>
-  )
-}
-
-export default Login_admin
+  );
+};
+export default Login_admin;

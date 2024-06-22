@@ -1,25 +1,48 @@
-import React from 'react'
-const Register_farmer = () => {
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import './register.css'; 
+import axios from "axios";
+const Register = () => {
+
   return (
     <div>
-        <form>
-        <div className="mb-3">
-    <label for="exampleInputPassword1" className="form-label">User Name</label>
-    <input type="text" className="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div className="mb-3">
-    <label for="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" className="form-text"></div>
-  </div>
-  <div className="mx-3">
-    <label for="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"/>
-  </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
-</form>
+    <div className="register-container">
+      <h2 className="register-title">Register Page</h2>
+      <form>
+        <div>
+          <label className="register-label">Username:</label>
+          <input
+            type="text"
+            name="username"
+            className="register-input"
+          />
+        </div>
+        <div>
+          <label className="register-label">Email:</label>
+          <input
+            type="email"
+            name="email"
+            className="register-input"
+          />
+        </div>
+        <div>
+          <label className="register-label">Password:</label>
+          <input
+            type="password"
+            name="password"
+            className="register-input"
+          />
+        </div>
+        <div>
+          <button type="submit" className="register-button">Register</button>
+        </div>
+        <p className="register-label">
+          Already have an account? <Link to="/login_farmer" className="link-label">Login here</Link>
+        </p>
+      </form>
     </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Register_farmer
+export default Register;

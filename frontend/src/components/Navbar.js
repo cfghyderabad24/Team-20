@@ -1,46 +1,79 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+import './Navbar.css';
+
+function Navbar() {
+    const [showDropdown, setShowDropdown] = useState(false);
+  const handleDropdownToggle = () => {
+    setShowDropdown(!showDropdown);
+  };
+  
   return (
-    <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="/">IFTR</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+    <nav className="navbar">
+      <Link to="/" className="navbar-brand">
+      <img src="https://images-platform.99static.com/a3N_EX1bu4ZYoZuNon2wOpuF9hw=/413x0:2894x2481/fit-in/500x500/projects-files/109/10974/1097485/6d2b78b0-8b08-4741-8a4c-33f11210aaab.png" alt="Logo" className="logo-image" />
+      <span className="logo-text">IFTR</span>
+      </Link>
+      <ul className="navbar-nav">
+        <>
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/">Dashboard</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <div className="nav-link" onClick={handleDropdownToggle}>
             Login
-          </a>
-          <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/login_farmer">Farmer</a></li>
-            <li><a className="dropdown-item" href="/login_admin">Admin</a></li>
-          </ul>
+              <ul className="dropdown">
+                <li>
+                  <Link to="/login_farmer" className="nav-link">
+                    Farmer
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login_admin" className="nav-link">
+                    Admin
+                  </Link>
+                </li>
+              </ul>
+          </div>
         </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="nav-item">
+          <div className="nav-link" onClick={handleDropdownToggle}>
             Register
-          </a>
-          <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/register_farmer">Farmer</a></li>
-            <li><a className="dropdown-item" href="/register_admin">Admin</a></li>
-          </ul>
+            {showDropdown && (
+              <ul className="dropdown">
+                <li>
+                  <Link to="/register_farmer" className="nav-link">
+                    Farmer
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/register_admin" className="nav-link">
+                    Admin
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+        </li></>
+        <li className="nav-item">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
         </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    </div>
-  )
-}
+        <>
+        <li className="nav-item">
+          <Link to="/dashboard" className="nav-link">
+            Dashboard
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/aboutus" className="nav-link">
+            AboutUs
+          </Link>
+        </li>
+        <li className="nav-item">
+        </li></>
 
-export default Navbar
+      </ul>
+    </nav>
+  );
+}
+export default Navbar;

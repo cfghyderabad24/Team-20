@@ -1,0 +1,40 @@
+.image-with-text-container {
+    display: flex;
+    align-items: center;
+    max-width: 1500px; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color:  #e7e7e7;
+   
+  }
+  
+  .image {
+    width:500px;
+    height: 250px;
+    border-radius: 50%;
+  }
+  
+  .text-container {
+    margin-left: 30px;
+    font-weight: bold;
+    color: black;
+    padding: 40px;
+    text-align: justify;
+    background-color:  #e7e7e7;
+  }
+  .heading-underline{
+    margin-top: -20px;
+    text-align: center;
+    margin-left: -150px;
+  }
+  .heading {
+    font-size: 30px;
+    margin-bottom: 20px; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .description {
+    font-size: 16px; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #555; 
+  }
